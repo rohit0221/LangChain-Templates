@@ -60,18 +60,19 @@ You'll later need to load envs from .env file, so install python-dotenv package 
 
     And add the following code to your server.py file:
 
+    ```python
+    from pirate_speak.chain import chain as pirate_speak_chain
+    add_routes(app, pirate_speak_chain, path="/pirate-speak")
+    ```
 
-    `from pirate_speak.chain import chain as pirate_speak_chain`
-
-    `add_routes(app, pirate_speak_chain, path="/pirate-speak")`
 
 3. Import the env variables into the server.py
 
-    `import os`
-
-    `from dotenv import load_dotenv`
-
-    `load_dotenv()`
+    ```python
+    import os
+    from dotenv import load_dotenv
+    load_dotenv()
+    ```
 
 
 # Configure Langsmith
@@ -165,6 +166,11 @@ input_data= {
 print(runnable.invoke(input_data))
 ```
 
+### Invoke the python app
+
+![alt text](image-10.png)
+
+
 ## Accessing the template with user input:
 
 You could create a python app that utilizes the template and generate responses to user inputs
@@ -190,6 +196,9 @@ user_input = input("Enter a string: ")
 
 print(get_pirate_response(user_input))
 ```
+
+### Invoke the python app
+![alt text](image-11.png)
 
 ## Creating a streamlit app:
 
