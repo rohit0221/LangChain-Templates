@@ -1,4 +1,4 @@
-# Using LangChain Templates
+# This Repo explains an elaborate method of using LangChain Templates
 
 ## Setting up the Folder structure
 
