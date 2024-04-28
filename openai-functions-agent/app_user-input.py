@@ -39,12 +39,13 @@ def get_tivaly_response(user_input):
                 "config": {},
                 "kwargs": {}
                 })
+    #return response.json()['output']['content']
     return response.text
+    
 
 
-st.title("Welcome to Tivaly Search Api app")
-user_input = st.text_input("Tell me about: ")
-if user_input:
-    response=get_tivaly_response(user_input)
-    output = extract_output_from_event_stream(response)
-    st.write(output)
+user_input = input("Enter a string: ")
+
+response=get_tivaly_response(user_input)
+output = extract_output_from_event_stream(response)
+print(output)
